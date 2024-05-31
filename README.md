@@ -19,5 +19,32 @@ How to run it?
 1. Download the start-proof-of-concept.sh script from this repository as it follows:
 
 ```bash
-curl -O https://raw.githubusercontent.com/ES4ALL/proof-of-concept/main/start-proof-of-concept.sh
+curl -O https://raw.githubusercontent.com/DiegoAscanio/es4all-proof-of-concept/main/start-proof-of-concept.sh
 ```
+
+2. Make the script executable:
+
+```bash
+chmod +x start-proof-of-concept.sh
+```
+
+3. Run the script:
+
+```bash
+./start-proof-of-concept.sh
+```
+
+And that's it, the script will run some commands at sudo, such as installing docker, docker-compose and xhost if you don't have them installed, and then, it will run a container (that will be removed when you stop it) with the ES4ALL proof of concept image hosted at Docker Hub.
+
+If you already have docker and docker-compose installed but your user is not in the docker group, you should add it to the docker group and re-login to your session, so you can run docker privileged commands without sudo, as it follows:
+
+```bash
+sudo usermod -aG docker $(whoami)
+```
+
+Then perform a logout and login again. Why this is necessary? The Windows VM (and the others) needs to access the host's CPU in order to run and this requires the flag -enable-kvm to be passed as a parameter to the qemu command, which is only possible if you run the container with the --privileged flag that requires your user to be in the docker group.
+
+For this reason, your host should support hardware virtualization that is enabled in your BIOS/UEFI settings. If you don't have this feature enabled, you can't run this proof of concept. Check how to enable it in your hardware's manual or in the internet. Some references to help you with this:
+
+- [How to enable virtualization in your PC BIOS](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/)
+- [How to enable virtualization in your PC UEFI](https://www.howtogeek.com/56958/what-is-uefi-and-how-is-it-different-from-bios/)
