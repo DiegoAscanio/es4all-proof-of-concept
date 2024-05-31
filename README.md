@@ -13,6 +13,8 @@ The VMs hosted when you run a container from this image are:
 Pre-requisites to run this proof of concept:
 
 - A Fedora, Ubuntu or Arch Linux host.
+- A cpu that supports hardware virtualization and at least 4 cores.
+- At least 8Gb of RAM.
 
 How to run it?
 
@@ -47,4 +49,6 @@ Then perform a logout and login again. Why this is necessary? The Windows VM (an
 For this reason, your host should support hardware virtualization that is enabled in your BIOS/UEFI settings. If you don't have this feature enabled, you can't run this proof of concept. Check how to enable it in your hardware's manual or in the internet. Some references to help you with this:
 
 - [How to enable virtualization in your PC BIOS](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/)
-- [How to enable virtualization in your PC UEFI](https://www.howtogeek.com/56958/what-is-uefi-and-how-is-it-different-from-bios/)
+- [How to Enable Virtualization (Hypervisor) in BIOS/UEFI](https://www.isumsoft.com/computer/enable-virtualization-technology-vt-x-in-bios-or-uefi.html)
+
+Lastly but not least, you should take a cup of coffee and wait for the container image download (it's about 12Gb) and the VMs to be created. The Windows VM creation takes a considerable amount of time, as it is installing Windows 10 Enterprise from scratch, so be patient.
