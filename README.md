@@ -55,4 +55,4 @@ Lastly but not least, you should take a cup of coffee and wait for the container
 
 ## Video tutorial showing how to run this proof of concept
 
-![https://i.imgur.com/fu09cry.png](https://www.youtube.com/watch?v=5mjIi7k6w9o)
+[![](./fu09cry.png)](https://www.youtube.com/watch?v=5mjIi7k6w9o)
