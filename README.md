@@ -52,3 +52,7 @@ For this reason, your host should support hardware virtualization that is enable
 - [How to Enable Virtualization (Hypervisor) in BIOS/UEFI](https://www.isumsoft.com/computer/enable-virtualization-technology-vt-x-in-bios-or-uefi.html)
 
 Lastly but not least, you should take a cup of coffee and wait for the container image download (it's about 12Gb) and the VMs to be created. The Windows VM creation takes a considerable amount of time, as it is installing Windows 10 Enterprise from scratch, so be patient.
+
+## Video tutorial showing how to run this proof of concept
+
+![https://i.imgur.com/fu09cry.png](https://www.youtube.com/watch?v=5mjIi7k6w9o)
