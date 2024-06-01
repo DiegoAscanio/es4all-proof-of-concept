@@ -58,20 +58,5 @@ fi
 # 5. Enable X11 forwarding
 xhost +
 
-# 6. Load KVM modules
-sudo modprobe kvm
-# Load intel module if it is an Intel CPU
-if [ -f /proc/cpuinfo ]; then
-    if grep -q "Intel" /proc/cpuinfo; then
-        sudo modprobe kvm-intel
-    fi
-fi
-# 7. Load AMD module if it is an AMD CPU
-if [ -f /proc/cpuinfo ]; then
-    if grep -q "AMD" /proc/cpuinfo; then
-        sudo modprobe kvm-amd
-    fi
-fi
-
-# 8. Run the docker container
-docker run --privileged -d -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY diegoascanio/cefetmg:proof-of-concept
+# 6. Run the docker container
+docker run --rm --privileged -d -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY --name ES4ALL-proof-of-concept diegoascanio/cefetmg:proof-of-concept
